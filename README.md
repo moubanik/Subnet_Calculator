@@ -8,7 +8,7 @@ A simple subnet calculator built with HTML, CSS, and JavaScript.
 - Host range calculation
 
 ## Live Demo
-[View Demo](https://moubanik.github.io/subnet-calculator)
+[View Demo](https://moubanik.github.io/Subnet_Calculator)
 
 ## Technologies Used
 - HTML5
