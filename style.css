@@ -1,0 +1,38 @@
+body{
+  font-family: Arial;
+  background: linear-gradient(135deg, #1d2671, #c33764);
+  color: #fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+.container{
+  background: rgba(30, 41, 59, 0.75); /* transparent layer */
+  padding:25px;
+  border-radius:12px;
+  width:420px;
+
+  /* background image */
+  background-image: url('https://www.transparenttextures.com/patterns/circuit-board.png'); 
+  background-size: cover;
+  background-position: center;
+
+  /* blend effect */
+  background-blend-mode: overlay;
+
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+select,input,button{
+    width:100%;padding:10px;margin:6px 0;border:none;border-radius:6px
+}
+select,input{
+    background:#334155;color:white
+}
+button{
+    background:#22c55e;color:white;cursor:pointer
+}
+.result{
+    margin-top:10px;background:#020617;padding:15px;border-radius:10px;font-size:13px;max-height:320px;overflow:auto;line-height:1.8
+    }

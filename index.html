@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Advanced Subnet Calculator</title>
+    <link rel="stylesheet" href="/home/sree/Desktop/Coding/Project/Subnet_Calculator/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Subnet Calculator</h2>
+
+      <select id="mode" onchange="toggleVLSM()">
+        <option value="flsm">FLSM</option>
+        <option value="vlsm">VLSM</option>
+      </select>
+
+      <select id="ipClass" onchange="showRange()">
+        <option value="A">Class A</option>
+        <option value="B">Class B</option>
+        <option value="C">Class C</option>
+      </select>
+
+      <div id="range" style="font-size: 12px"></div>
+
+      <input type="text" id="ip" placeholder="Enter Base IP" />
+      <input type="number" id="cidr" placeholder="Enter CIDR" />
+      <input
+        type="text"
+        id="hosts"
+        placeholder="VLSM Hosts (e.g. 50,20,10)"
+        style="display: none"
+      />
+
+      <button onclick="calculate()">Calculate</button>
+      <button onclick="resetAll()" style="background: #ef4444">Reset</button>
+      <button onclick="toggleFormula(this)" style="background: #3b82f6">
+        Show Formulas
+      </button>
+
+      <div class="result" id="output"></div>
+    </div>
+    <div
+      id="formulaBox"
+      style="
+        display: none;
+        margin-top: 10px;
+        background: #020617;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 12px;
+        line-height: 1.6;
+      "
+    >
+      <b>Subnetting Formulas:</b><br /><br />
+
+      <b>1. Number of Networks:</b><br />
+      2^n (n = borrowed bits)<br /><br />
+
+      <b>2. Hosts per Network:</b><br />
+      2^h - 2 (h = host bits)<br /><br />
+
+      <b>3. Block Size:</b><br />
+      2^h<br /><br />
+
+      <b>4. CIDR:</b><br />
+      32 - log2(Block Size)<br /><br />
+
+      <b>5. Subnet Mask:</b><br />
+      CIDR → Dotted Decimal<br /><br />
+
+      <b>6. Network Address:</b><br />
+      IP AND Subnet Mask<br /><br />
+
+      <b>7. Broadcast Address:</b><br />
+      Network + Block Size - 1<br /><br />
+
+      <b>8. First Host:</b><br />
+      Network + 1<br /><br />
+
+      <b>9. Last Host:</b><br />
+      Broadcast - 1
+    </div>
+    <script src="/home/sree/Desktop/Coding/Project/Subnet_Calculator/js/script.js"></script>
+  </body>
+</html>
